@@ -1,0 +1,14 @@
+.Home {
+  display: flex;
+  text-align: center;
+  background: #fff;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 10%;
+}
+
+@media only screen and (max-width: 600px) {
+  .Home {
+    padding: 8px 0;
+  }
+}

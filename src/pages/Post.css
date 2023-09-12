@@ -1,0 +1,22 @@
+.Post {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.Post .title {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none !important;
+    color: #333;
+}
+
+.Post .body {
+    font-size: 16px;
+    color: #333;
+    
+}
