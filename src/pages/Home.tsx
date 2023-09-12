@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import './Home.css'
 import PostCell from '../components/PostCell'
 import { IPost } from '../types/post'
+import { fetchPosts } from '../api/posts'
 
 const Home = () => {
   const [posts, setPosts] = useState<IPost[]>([])
@@ -10,15 +11,14 @@ const Home = () => {
     getPosts()
   }, [])
 
-  const getPosts = async () => {
+  const getPosts = useCallback(async () => {
     try {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-      const posts = await res.json()
+      const posts = await fetchPosts()
       setPosts(posts)
     } catch (err) {
-        console.log(err)
+      console.log(err)
     }
-  }
+  }, [])
 
   return (
     <div className="Home">
